@@ -1,0 +1,50 @@
+service: lambda-picklestruct
+frameworkVersion: '>=3.0.0 <4.0.0'
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+custom:
+  app_acronym: lambda-picklestruct-edit
+  default_stage: dev
+  stage: ${opt:stage, self:custom.default_stage}
+  stack_name: ${self:custom.app_acronym}-${self:custom.stage}
+  deletion_policy: Delete
+
+
+  pythonRequirements:
+    slim: true
+    invalidateCaches: true
+    usePoetry: false
+    noDeploy:
+      - botocore
+
+provider:
+  name: aws
+  runtime: python3.8
+  architecture: arm64
+  memorySize: 4096 # optional, in MB, default is 1024
+  timeout: 20 # optional, in seconds, default is 6
+#  lambdaHashingVersion: 20201221
+  versionFunctions: false
+
+# you can overwrite defaults here
+#  stage: dev
+  region: eu-central-1
+  environment:
+    REGION: ${self:provider.region}
+
+package:
+  individually: false
+  patterns:
+    - '!./**'
+    - python_lambda/handler.py
+    - _cython/**
+    - _python/**
+
+functions:
+  hello-python:
+    handler: python_lambda/handler.hello_python
+
+  hello-cython:
+    handler: python_lambda/handler.hello_cython

@@ -1,0 +1,24 @@
+{
+  "name": "lambda-cython",
+  "version": "1.0.0",
+  "description": "### Install npm ```bash npm init -y ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Derfirm/renpy_decode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Derfirm/renpy_decode/issues"
+  },
+  "homepage": "https://github.com/Derfirm/renpy_decode#readme",
+  "devDependencies": {
+    "serverless-offline": "^9.1.5",
+    "serverless-python-requirements": "^5.4.0"
+  }
+}
