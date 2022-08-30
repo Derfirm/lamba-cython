@@ -67,3 +67,6 @@ build: clean cythonize
 check:
 	$(POETRY) run flake8 _cython _python
 	$(POETRY) run mypy _cython _python
+
+package: build
+	$(POETRY) run python setup.py sdist bdist_wheel

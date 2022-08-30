@@ -21,12 +21,9 @@ extensions = [
 
 
 setup(
+    setup_requires=['wheel'],
     name="picklestruct",
     packages=packages,
-    # cmdclass={"build_ext": build_ext},
     ext_modules=extensions,
-    # ext_package='picklestruct',
-    # py_modules=["picklestruct"],
-    # package_dir={"picklestruct": "picklestruct"},
-    # packages=find_packages(where=".", include=["picklestruct"]),
+
 )
