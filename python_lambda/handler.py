@@ -22,14 +22,14 @@ def aws_response_wrapper(func):
 
 @aws_response_wrapper
 def hello_python(event, context):
-    from _python.hello import say_hello
+    from python_m.hello import say_hello
 
     return {"text": say_hello()}
 
 
 @aws_response_wrapper
 def hello_cython(event, context):
-    from _cython.hello import say_hello
+    from cython_m.hello import say_hello
 
     return {"text": say_hello()}
 
